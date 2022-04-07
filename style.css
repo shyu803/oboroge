@@ -1,0 +1,47 @@
+* {
+    margin:0; padding:0;
+  }
+  header {
+    width: 100%;
+    padding: 15px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  header .headline{
+    font-size: 32px;
+    font-family: 'Noto Serif JP', serif;
+    color: white;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  header{
+    padding-top: 0px;
+    padding-bottom: 10px;
+  }
+  .nav-list {
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+  }
+  .box1{
+    margin-right: 10px;
+  }
+  .box2{
+    background:blue;
+    width: 60%;
+  }
+  .saku{
+    width: 10%;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .wrap{
+    display:flex;
+    justify-content: center;
+  }
