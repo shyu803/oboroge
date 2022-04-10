@@ -9,23 +9,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-    <header>
-        <h1 class="headline">
-          <a>朧 気</a>
-        </h1>
-      </header>
-      <container>
-        <h2 style="margin-left: 10px;">次回展示会のお知らせ</h2>
+    <div id="app">
+    <v-app>
+    <v-main>
+    <v-app-bar
+        color="red"
+        elevation="10"
+    >
+        <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-title class="mx-4"><a href="#about">朧気とは？</a></v-toolbar-title>
+        <v-toolbar-title class="mx-4"><a href="#event">次回展示会</a></v-toolbar-title>
+        <v-toolbar-title class="mx-4"><a href="#news">お知らせ</a></v-toolbar-title>
+        <v-toolbar-title class="mx-4"><a href="#us">作者紹介</a></v-toolbar-title>
+    </v-app-bar>
+    
+    <v-img
+        lazy-src="https://picsum.photos/id/11/10/6"
+        max-width="100%"
+        src="https://picsum.photos/id/11/500/300"
+    ></v-img>
+    <v-container>
+        <h2 style="margin-left: 10px;" id="news">お知らせ</h2>
+        <v-simple-table class="my-2">
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <th class="text-left">
+                    日時
+                  </th>
+                  <th class="text-left">
+                    内容
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>2022/04/15</td>
+                    <td>次回展示会の情報を更新しました。</td>
+                </tr>
+                <tr>
+                  <td>2022/04/01</td>
+                  <td>サイトをオープンしました。</td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+   
+        <h2 style="margin-left: 10px;" id="about">朧気とは</h2>
+        <v-card elevation="0">
+            <v-card-text>大学生有志で集まって各々の展示をする会です。</v-card-text>
+        </v-card>
+
+        <h2 style="margin-left: 10px;" class="mb-2" id="event">次回展示会</h2>
         <div class="wrap">
             <div class="box1">
                 <img src="img/1.jpg" alt="展示会画像" width="300px">
             </div>
-            <div class="box2">説明</div>
+            <div class="box2">
+                <p class="text-h4">ペトリコール</p>
+                <v-divider></v-divider>
+                <p class="text-h5">日時</p>
+                <p>2022年6月18日-20日</p>
+                <v-divider></v-divider>
+                <p class="text-h5">場所</p>
+                <p>東京体育館1F 中ホール</p>
+                <p>東京都渋谷区千駄ヶ谷1-2-3</p>
+                <p>東京メトロ千代田線表参道駅から徒歩5分</p>
+            </div>
         </div>
-        <h2 style="margin-left: 10px;">朧気とは</h2>
-        <h2 style="margin-left: 10px;">作者紹介</h2>
+
+        <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
         <div class="wrap">
             <div class="saku">
                 <img src="img/2.jpg" alt="作者画像" width="100px">
@@ -43,6 +104,18 @@
                 <img src="img/2.jpg" alt="作者画像" width="100px">
             </div>
         </div>
-      </container>
+    </v-container>
+    </v-main>
+    </v-app>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+    })
+    </script>
 </body>
 </html>
