@@ -20,9 +20,11 @@
     <v-app>
     <v-main>
     <v-app-bar
-        color="red"
+        color="deep-purple"
         elevation="10"
+        dark
     >
+        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-title class="mx-4"><a href="#about">朧気とは？</a></v-toolbar-title>
@@ -30,6 +32,39 @@
         <v-toolbar-title class="mx-4"><a href="#news">お知らせ</a></v-toolbar-title>
         <v-toolbar-title class="mx-4"><a href="#us">作者紹介</a></v-toolbar-title>
     </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      bottom
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-title>Foo</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Bar</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Fizz</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Buzz</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
     
     <v-img
         lazy-src="https://picsum.photos/id/11/10/6"
@@ -116,6 +151,21 @@
         el: '#app',
         vuetify: new Vuetify(),
     })
+    </script>
+    <script>
+        export default {
+            
+          data: () => ({
+            drawer: false,
+            group: null,
+          }),
+      
+          watch: {
+            group () {
+              this.drawer = false
+            },
+          },
+        }
     </script>
 </body>
 </html>
