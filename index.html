@@ -24,19 +24,18 @@
       elevation="10"
       dark
     >
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="mx-4"><a href="#about" style="color:white">朧気とは？</a></v-toolbar-title>
-      <v-toolbar-title class="mx-4"><a href="#event" style="color:white">次回展示会</a></v-toolbar-title>
-      <v-toolbar-title class="mx-4"><a href="#news" style="color:white">お知らせ</a></v-toolbar-title>
-      <v-toolbar-title class="mx-4"><a href="#us" style="color:white">作者紹介</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#about" style="color:white">朧気とは？</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#event" style="color:white">次回展示会</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#news" style="color:white">お知らせ</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#us" style="color:white">作者紹介</a></v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
       v-model="drawer"
       absolute
-      bottom
       temporary
     >
       <v-list
@@ -47,20 +46,20 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
+          <v-list-item href="#about">
+            <v-list-item-title>朧気とは？</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
+          <v-list-item href="#event">
+            <v-list-item-title>次回展示会</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
+          <v-list-item href="#news">
+            <v-list-item-title>お知らせ</v-list-item-title>
           </v-list-item>
 
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
+          <v-list-item href="#us">
+            <v-list-item-title>作者紹介</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>   
@@ -107,29 +106,33 @@
         </v-card>
 
         <h2 style="margin-left: 10px;" class="mb-2" id="event">次回展示会</h2>
-        <div class="wrap">
-            <div class="box1">
-                <img src="img/1.jpg" alt="展示会画像" width="300px">
-            </div>
-            <div class="box2">
-                <p class="text-h4">ペトリコール</p>
-                <v-divider></v-divider>
-                <p class="text-h5">日時</p>
-                <p>2022年6月18日-20日</p>
-                <v-divider></v-divider>
-                <p class="text-h5">場所</p>
-                <p>東京体育館1F 中ホール</p>
-                <p>東京都渋谷区千駄ヶ谷1-2-3</p>
-                <p>東京メトロ千代田線表参道駅から徒歩5分</p>
-            </div>
-        </div>
+        <v-row class="mx-4">
+            <v-col cols="12" sm="4" lg="4" md="4" xl="4">
+              <v-img src="img/1.jpg" alt="展示会画像" width="300px"></v-img>
+            </v-col>
+            <v-col cols="12" sm="8" lg="8" md="8" xl="8">
+              <p class="text-h4">ペトリコール</p>
+              <v-divider></v-divider>
+              <p class="text-h5">日時</p>
+              <p>2022年6月18日-20日</p>
+              <v-divider></v-divider>
+              <p class="text-h5">場所</p>
+              <p>東京体育館1F 中ホール</p>
+              <p>東京都渋谷区千駄ヶ谷1-2-3</p>
+              <p>東京メトロ千代田線表参道駅から徒歩5分</p>
+            </v-col>
+        </v-row>
 
         <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
         <v-row dense class="mx-4">
           <v-col
             v-for="(item, i) in items"
             :key="i"
-            cols="6"
+            cols="12"
+            sm="6"
+            md="6"
+            lg="4"
+            xl="4"
           >
             <v-card
               :color="item.color"
@@ -142,13 +145,8 @@
                     class="text-h5"
                     v-text="item.title"
                   ></v-card-title>
-                  
-
                   <v-card-subtitle v-text="item.artist"></v-card-subtitle>
-  
-
                 </div>
-  
                 <v-avatar
                   class="ma-3"
                   size="125"
