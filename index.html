@@ -103,7 +103,7 @@
               
               次回展示は上記の通り、<br>
               6/10-12 デザインフェスタギャラリーにて予定しております。<br>
-              詳細は上の画像をクリックしてご覧ください。</v-card-text>
+              詳細は<a href="event.html">こちら</a>をクリックしてご覧ください。</v-card-text>
         </v-card>
 
         <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
@@ -156,8 +156,8 @@
                       height="50px"
                       right
                       width="50px"
-                      :href="item.twitter"
-                      v-if="item.twitter"
+                      :href="item.tw"
+                      v-if="item.tw"
                       target="_blank" rel="noopener noreferrer"
                     >
                       <v-icon>mdi-twitter</v-icon>
@@ -174,6 +174,32 @@
                       target="_blank" rel="noopener noreferrer"
                     >
                       <v-icon>mdi-instagram</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.yt"
+                      v-if="item.yt"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-youtube</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.tk"
+                      v-if="item.tk"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-alpha-t-box</v-icon>
                     </v-btn>
                   </v-col>
                 </v-row>
@@ -226,32 +252,32 @@
               src: 'img/head.jpg',
             },
             {
-              src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+              src: 'img/ptrkl.jpg',
             },
             {
-              src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-            },
-            {
-              src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+              src: 'img/1.jpg',
             },
           ],
           items: [
             {
               color: 'pink',
               title: '珠枝雛乃',
-              intro: 'たまび工芸金属春から2年生💍🔨✨学科問わず仲良くしてください🍒多摩美ボドゲサークル部長🎲',
-              src:"https://pbs.twimg.com/profile_images/1451466463751991297/q4jXYEBZ_400x400.jpg"
+              intro: 'スチームパンクでメルヘンな世界観が好き。立体作品製作から楽曲製作まで幅広い活動をしている。2000年生まれ。2021年多摩美術大学入学、グループ展「朧気」の主宰。現在は金属を学んでいる。',
+              src:"https://pbs.twimg.com/profile_images/1451466463751991297/q4jXYEBZ_400x400.jpg",
+              tw:"https://twitter.com/nonhinachan?s=20&t=r49WhTC7Ta2aCGVCYTLt0w",
+              yt:"https://youtube.com/channel/UCO0Zr3loHC6ac0RvZJPrqXw",
+              tk:"https://vt.tiktok.com/ZSdXoheA2/"
             },
             {
               color: 'orange',
               title: 'すゑ',
-              intro: '',
+              intro: 'すゑ(sue)と申します。この名前は実家のうさぎさんからもらいました。生活の中の漂い、流れる空気の柔らかさや湿っぽさを陶や水彩を主に用いて表現します。2003年生まれ。2021年多摩美術大学に入学。同年、級友とグループ展「朧気」を開催。現在は陶を学んでいる。',
             },
             {
               color: 'brown',
               title: '灸夏',
               intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
-              twitter:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg"
+              tw:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg"
             },
             {
               color: 'green',
@@ -267,13 +293,13 @@
             },
             {
               color: 'red',
-              title: '石川',
-              intro: '',
+              title: '石川芳江',
+              intro: '多摩美術大学 日本画 二年',
             },
             {
               color: 'yellow',
               title: 'みやもとあやか',
-              intro: '',
+              intro: '多摩美術大学　日本画　２年',
             },
             {
               color: '#952175',
