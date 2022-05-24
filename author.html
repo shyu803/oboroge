@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>朧気</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+    <div id="app">
+    <v-app>
+    
+    <v-app-bar
+      color="grey"
+      elevation="10"
+      dark
+    >
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
+      <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#about" style="color:white">朧気とは？</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#event" style="color:white">次回展示会</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#news" style="color:white">お知らせ</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#us" style="color:white">作者紹介</a></v-toolbar-title>
+    </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item href="#about">
+            <v-list-item-title>朧気とは？</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="#event">
+            <v-list-item-title>次回展示会</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="#news">
+            <v-list-item-title>お知らせ</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="#us">
+            <v-list-item-title>作者紹介</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>   
+    </v-navigation-drawer>
+
+    <v-main>
+    <v-container>
+      <p class="text-center text-h5 mt-12" v-if="q">作者紹介 No.{{q}}</p>
+      <p class="text-center text-h2 mt-12" v-if="q">{{items[q].title}}</p>
+  
+      <v-card elevation="0">
+        <v-card-text class="text-center text-h4">
+          {{items[q].intro}}
+        </v-card-text>
+      </v-card>
+
+      <h2 style="margin-left: 10px;" class="mb-2" id="event">過去作品</h2>
+      <v-carousel hide-delimiters cycle class="mx-8">
+        <v-carousel-item
+        v-for="(item,i) in slide2"
+        :key="i"
+        :src="item.src"
+        ></v-carousel-item>
+      </v-carousel>
+
+    </v-container>
+    </v-main>
+    </v-app>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+    new Vue({
+        el: '#app',        
+        data:{
+          drawer: false,
+          group: null,
+          q: window.location.search.slice(1),
+          items: [
+            {
+              color: 'pink',
+              title: '珠枝雛乃',
+              intro: 'たまび工芸金属春から2年生💍🔨✨学科問わず仲良くしてください🍒多摩美ボドゲサークル部長🎲',
+              src:"https://pbs.twimg.com/profile_images/1451466463751991297/q4jXYEBZ_400x400.jpg"
+            },
+            {
+              color: 'orange',
+              title: 'すゑ',
+              intro: '',
+            },
+            {
+              color: 'brown',
+              title: '灸夏',
+              intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
+              twitter:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg"
+            },
+            {
+              color: 'green',
+              title: '相田 穂介',
+              intro: '好きな時に好きなだけ好きな絵を描きます。',
+              insta: "https://www.instagram.com/habagen_idah/"
+            },
+            {
+              color: 'blue',
+              title: 'くらげ',
+              intro: '多摩美術大学日本画2年 海に関する日本画を制作しています。',
+              insta:  "https://www.instagram.com/kurage5656/"
+            },
+            {
+              color: 'red',
+              title: '石川',
+              intro: '',
+            },
+            {
+              color: 'yellow',
+              title: 'みやもとあやか',
+              intro: '',
+            },
+            {
+              color: '#952175',
+              title: 'あいう',
+              intro: '',
+            },
+          ],
+          slide2: 
+          [
+            {src: "img/auth/2/83779.jpg"},{src: "img/auth/2/83780.jpg"},{src: "img/auth/2/83781.jpg"}
+          ],
+          
+        },
+        watch: {
+          group () {
+            this.drawer = false
+          },
+        },
+        vuetify: new Vuetify(),
+
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>朧気</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+    <div id="app">
+    <v-app>
+    
+    <v-app-bar
+      color="grey"
+      elevation="10"
+      dark
+    >
+      <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
+      <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#about" style="color:white">朧気とは？</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#event" style="color:white">次回展示会</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#news" style="color:white">お知らせ</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html" style="color:white">作者紹介</a></v-toolbar-title>
+    </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item href="index.html/#about">
+            <v-list-item-title>朧気とは？</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="index.html/#event">
+            <v-list-item-title>次回展示会</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="index.html/#news">
+            <v-list-item-title>お知らせ</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item href="index.html/#us">
+            <v-list-item-title>作者紹介</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>   
+    </v-navigation-drawer>
+
+    <v-main>
+    <v-container>
+        <v-row class="mx-4 mt-12">
+          <v-col cols="12" sm="4" lg="4" md="4" xl="4">
+            <v-img src="img/ptrkl.jpg" alt="展示会画像" width="300px"></v-img>
+          </v-col>
+          <v-col cols="12" sm="8" lg="8" md="8" xl="8">
+            <h1 class="text-h4 mb-6">ペトリコール</h1>
+            <v-divider></v-divider>
+            <p class="text-h5 mt-6">
+              「ペトリコール」<br><br>
+
+              それは、雨上がりの匂い。<br>
+              雨に曇りに時々晴れ<br>
+              そんな不安定な天気の中の<br>
+              特に雨上がりに、私たちは何を見るか。<br><br>
+            
+            
+              多摩美日本画、工芸科八名による展示。
+            </p>
+          </v-col>
+      </v-row>
+
+        <h2>開催概要</h2>
+        <v-simple-table class="my-2">
+          <template v-slot:default>
+            <tbody>
+              <tr>
+                <td class="text-h5">日時</td>
+                <td>2022.6.10-6.12<br>10:00-20:00<br><span class="text-caption">※初日13時開場 最終日19時閉場</span></td>
+              </tr>
+              <tr>
+                <td class="text-h5">アクセス</td>
+                <td>デザインフェスタギャラリー WEST-1F<br>東京都渋谷区神宮前3-20-182<br><span class="text-caption">地下鉄明治神宮前駅より徒歩5分 JR山手線原宿駅より徒歩7分</span></td>
+              </tr>
+              <tr>
+                <td class="text-h5">入場料</td>
+                <td>無料</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+
+        <h2 style="margin-left: 10px;">お知らせ</h2>
+        <v-simple-table class="my-2">
+            <template v-slot:default>
+              <thead>
+                <tr>
+                  <th class="text-left">
+                    日時
+                  </th>
+                  <th class="text-left">
+                    内容
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>2022/04/15</td>
+                    <td>次回展示会の情報を更新しました。</td>
+                </tr>
+                <tr>
+                  <td>2022/04/01</td>
+                  <td>サイトをオープンしました。</td>
+                </tr>
+              </tbody>
+            </template>
+          </v-simple-table>
+    </v-container>
+    </v-main>
+    </v-app>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+    new Vue({
+        el: '#app',        
+        data:{
+          drawer: false,
+          group: null,
+          items1: [
+            {
+              src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+            },
+            {
+              src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+            },
+            {
+              src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
+            },
+            {
+              src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
+            },
+          ],
+          items: [
+            {
+              color: '#1F7087',
+              title: 'ひなのん',
+              artist: 'たまび工芸金属春から2年生💍🔨✨学科問わず仲良くしてください🍒多摩美ボドゲサークル部長🎲',
+            },
+            {
+              color: '#952175',
+              title: 'あいう',
+              artist: 'ちゃんちゃか',
+            },
+            {
+              color: '#952175',
+              title: 'あいう',
+              artist: 'ちゃんちゃか',
+            },
+          ],
+        },
+        watch: {
+          group () {
+            this.drawer = false
+          },
+        },
+        vuetify: new Vuetify(),
+
+    })
+    </script>
+</body>
+</html>
