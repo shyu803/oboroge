@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>朧気</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
@@ -94,7 +95,8 @@
 
         <h2 style="margin-left: 10px;" id="about">朧気とは</h2>
         <v-card elevation="0">
-            <v-card-text>朧気は、美大生による展示団体です。<br>
+            <v-card-text class="text-subtitle-2" style="color:black">
+              朧気は、美大生による展示団体です。<br>
               第一回展示は2/18-20 デザインフェスタギャラリーにて行いました。<br><br>
               
               コロナ渦において先行きの見えない「朧気」な私たちが作家活動をしていく場として、本展示団体を立ち上げました。<br><br>
@@ -105,7 +107,7 @@
         </v-card>
 
         <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
-        <p>タップすると詳細が見れます。</p>
+        <p class="mx-4">タップすると詳細が見れます。</p>
         <v-row dense class="mx-4">
           <v-col
             v-for="(item, i) in items"

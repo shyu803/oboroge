@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>朧気</title>
+    <title>ペトリコール</title>
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
@@ -27,10 +28,10 @@
       <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
       <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#about" style="color:white">朧気とは？</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#event" style="color:white">次回展示会</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html/#news" style="color:white">お知らせ</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html" style="color:white">作者紹介</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html#about" style="color:white">朧気とは？</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html#event" style="color:white">次回展示会</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html#news" style="color:white">お知らせ</a></v-toolbar-title>
+      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="index.html#us" style="color:white">作者紹介</a></v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -46,19 +47,19 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item href="index.html/#about">
+          <v-list-item href="index.html#about">
             <v-list-item-title>朧気とは？</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="index.html/#event">
+          <v-list-item href="index.html#event">
             <v-list-item-title>次回展示会</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="index.html/#news">
+          <v-list-item href="index.html#news">
             <v-list-item-title>お知らせ</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="index.html/#us">
+          <v-list-item href="index.html#us">
             <v-list-item-title>作者紹介</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
