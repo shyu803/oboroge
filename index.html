@@ -77,13 +77,13 @@
         <h2 style="margin-left: 10px;" class="mb-2" id="event">次回展示会</h2>
         <v-row class="mx-4" href="event.html">
             <v-col cols="12" sm="4" lg="4" md="4" xl="4">
-              <v-img src="img/ptrkl.jpg" alt="展示会画像" width="300px"></v-img>
+              <v-img src="img/idaku.jpg" alt="展示会画像" width="300px"></v-img>
             </v-col>
             <v-col cols="12" sm="8" lg="8" md="8" xl="8">
-              <p class="text-h4">ペトリコール</p>
+              <p class="text-h4">いだくもの</p>
               <v-divider></v-divider>
               <p class="text-h5">日時</p>
-              <p>2022年6月10日-12日</p>
+              <p>2022年12月26日-28日</p>
               <v-divider></v-divider>
               <p class="text-h5">場所</p>
               <p>デザインフェスタギャラリー　WEST-1F</p>
@@ -94,15 +94,15 @@
 
         <h2 style="margin-left: 10px;" id="about">朧気とは</h2>
         <v-card elevation="0">
-            <v-card-text class="text-subtitle-2" style="color:black">
-              朧気は、美大生による展示団体です。<br>
-              第一回展示は2/18-20 デザインフェスタギャラリーにて行いました。<br><br>
-              
-              コロナ渦において先行きの見えない「朧気」な私たちが作家活動をしていく場として、本展示団体を立ち上げました。<br><br>
-              
-              次回展示は上記の通り、<br>
-              6/10-12 デザインフェスタギャラリーにて予定しております。<br>
-              詳細は<a href="event.html">こちら</a>をクリックしてご覧ください。</v-card-text>
+          <v-card-text class="text-subtitle-2" style="color:black">
+            朧気は、美大生による展示団体です。<br>
+            第一回展示は2/18-20 デザインフェスタギャラリーにて行いました。<br><br>
+            
+            コロナ渦において先行きの見えない「朧気」な私たちが作家活動をしていく場として、本展示団体を立ち上げました。<br><br>
+            
+            次回展示は上記の通り、<br>
+            12/26-28 デザインフェスタギャラリーにて予定しております。<br>
+            詳細は<a href="event.html">こちら</a>をクリックしてご覧ください。</v-card-text>
         </v-card>
 
         <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
@@ -121,7 +121,7 @@
               :color="item.color"
               dark
               height="100%"
-              :href=`/author.html?${i}`
+              :href="`/author.html?${i}`"
             >
               <div class="d-flex flex-no-wrap justify-space-between">
                 <v-row>
@@ -209,29 +209,33 @@
 
         <h2 style="margin-left: 10px;" id="news">お知らせ</h2>
         <v-simple-table class="my-2">
-            <template v-slot:default>
-              <thead>
-                <tr>
-                  <th class="text-left">
-                    日時
-                  </th>
-                  <th class="text-left">
-                    内容
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2022/04/15</td>
-                  <td>次回展示会の情報を更新しました。</td>
-                </tr>
-                <tr>
-                  <td>2022/04/01</td>
-                  <td>サイトをオープンしました。</td>
-                </tr>
-              </tbody>
-            </template>
-          </v-simple-table>
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-left">
+                  日時
+                </th>
+                <th class="text-left">
+                  内容
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2022/11/21</td>
+                <td>次回展示会の情報を更新しました。</td>
+              </tr>
+              <tr>
+                <td>2022/04/15</td>
+                <td>次回展示会の情報を更新しました。</td>
+              </tr>
+              <tr>
+                <td>2022/04/01</td>
+                <td>サイトをオープンしました。</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
 
     </v-container>
     </v-main>
@@ -305,6 +309,21 @@
               title: 'みやもとあやか',
               intro: '多摩美術大学　日本画　２年',
               src:"img/auth/6/0.jpg"
+            },
+            {
+              color: 'pink lighten-5',
+              title: '戌宮初音',
+              intro: '多摩美術大学　メディア芸術　２年',
+              src:"img/auth/7/0.jpg",
+              tw:"https://twitter.com/inumiya_pome",
+              insta:  "https://www.instagram.com/inumiya_pome/",
+              tk:"https://www.tiktok.com/@inumiya_pome"
+            },
+            {
+              color: 'pink lighten-2',
+              title: 'なえ',
+              intro: '多摩美術大学　情報デザイン　２年',
+              src:"img/auth/8/0.jpg"
             },
             {
               color: '#952175',
