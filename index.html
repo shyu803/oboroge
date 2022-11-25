@@ -14,103 +14,114 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
     <div id="app">
     <v-app>
-    
-    <v-app-bar
-      color="grey"
-      elevation="10"
-      dark
-    >
-      <v-app-bar-nav-icon @click="drawer = !drawer" class="d-flex d-sm-none"></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-h4 ml-6">朧気</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#about" style="color:white">朧気とは？</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#event" style="color:white">次回展示会</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#news" style="color:white">お知らせ</a></v-toolbar-title>
-      <v-toolbar-title class="mx-6 d-none d-sm-flex"><a href="#us" style="color:white">作者紹介</a></v-toolbar-title>
-    </v-app-bar>
-
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-    >
-      <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item href="#event">
-            <v-list-item-title>次回展示会</v-list-item-title>
-          </v-list-item>
-          <v-list-item href="#about">
-            <v-list-item-title>朧気とは？</v-list-item-title>
-          </v-list-item>
-          <v-list-item href="#us">
-            <v-list-item-title>作者紹介</v-list-item-title>
-          </v-list-item>
-          <v-list-item href="#news">
-            <v-list-item-title>お知らせ</v-list-item-title>
-          </v-list-item>
-
-
-        </v-list-item-group>
-      </v-list>   
-    </v-navigation-drawer>
-
     <v-main>
-    <v-carousel hide-delimiters cycle>
-      <v-carousel-item
-        v-for="(item,i) in items1"
-        :key="i"
-        :src="item.src"
-      ></v-carousel-item>
-    </v-carousel>
+      <div style="position:fixed; top:5px; right:5px; z-index:10000;">
+        <v-menu
+          v-model="menu"
+          offset-x
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              class="pa-4"
+              color="indigo"
+              dark
+              icon
+              v-bind="attrs"
+              v-on="on"
+              rounded
+              style="background-color:rgba(154, 218, 218, 0.608)"
+              width="45px"
+              height="45px"
+            >
+              <v-icon large>mdi-menu</v-icon>
+            </v-btn>
+          </template>
+    
+          <v-card width="30vw">
+            <v-list
+              nav
+              dense
+            >
+              <v-list-item-group>
+                <v-list-item href="#event">
+                  <v-list-item-title>次回展示会</v-list-item-title>
+                </v-list-item>
+                <v-list-item href="#us">
+                  <v-list-item-title>作者紹介</v-list-item-title>
+                </v-list-item>
+                <v-list-item href="#news">
+                  <v-list-item-title>お知らせ</v-list-item-title>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list> 
+            <v-divider></v-divider>
+          </v-card>
+        </v-menu>
+      </div>
+      <div style="background-color:gray;">
+        <p class="title text-h1" style="font-family: 'Hina Mincho', serif !important;">朧<br>気</p>
+        <p class="text-subtitle-1 mx-4" style="font-family: 'Shippori Mincho', serif !important;">
+          朧気は、美大生+αによる展示団体です。<br><br>
+
+          コロナ渦において先行きの見えない「朧気」な私たちが作家活動をしていく場として、本展示団体を立ち上げました。<br>
+          第一回展示は2022年2月 デザインフェスタギャラリーにて行いました。<br><br>
+        </p>
+      </div>
+      <!--
+      <v-carousel hide-delimiters cycle>
+        <v-carousel-item
+          v-for="(item,i) in items1"
+          :key="i"
+          :src="item.src"
+        ></v-carousel-item>
+      </v-carousel>
+      -->
     <v-container>
-        <h2 style="margin-left: 10px;" class="mb-2" id="event">次回展示会</h2>
+        <h2 id="event" class="text-center my-4">- 次回展示会 -</h2>
         <v-row class="mx-4" href="event.html">
-            <v-col cols="12" sm="4" lg="4" md="4" xl="4">
-              <v-img src="img/idaku.jpg" alt="展示会画像" width="300px"></v-img>
-            </v-col>
-            <v-col cols="12" sm="8" lg="8" md="8" xl="8">
-              <p class="text-h4">いだくもの</p>
-              <v-divider></v-divider>
-              <p class="text-h5">日時</p>
-              <p>2022年12月26日-28日</p>
-              <v-divider></v-divider>
-              <p class="text-h5">場所</p>
+          <v-col cols="12" sm="5" lg="5" md="5" xl="5">
+            <v-img src="img/idaku.jpg" alt="展示会画像" width="300px" class="mx-auto"></v-img>
+          </v-col>
+          <v-col cols="12" sm="7" lg="7" md="7" xl="7" class="d-flex flex-column">
+            <div class="my-auto">
+              <h1 class="text-center">いだくもの</h1>
+            </div>
+            <div class="my-auto mx-auto d-flex align-center">
+              <h3 class="mr-4">日時</h3>
+              <div>
+                <p class="ma-0">2022年12月26日-28日</p>
+                <p>10:00-20:00<span class="text-caption">(初日13時開場、最終日19時閉場)</span></p>
+              </div>
+                    
+            </div>
+            <div class="my-auto mx-auto d-flex">
+              <h3 class="mr-4">場所</h3>
               <p>デザインフェスタギャラリー　WEST-1F</p>
-              <p>東京都渋谷区神宮前3-20-182</p>
-              <p>詳しくは<a href="event.html">こちら</a></p>
-            </v-col>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.2617963650646!2d139.7059495150835!3d35.67055528019671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca31a6f487b%3A0x59410080ec9c6d61!2z44OH44K244Kk44Oz44OV44Kn44K544K_44Ku44Oj44Op44Oq44O85Y6f5a6_!5e0!3m2!1sja!2sjp!4v1669047160312!5m2!1sja!2sjp" width="350" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mx-auto"></iframe>                
+            <v-btn href="/event.html" width="160px" class="mx-auto mt-4">
+              <p class="text-center ma-0">イベントの詳細</p> 
+            </v-btn>
+          </v-col>
         </v-row>
 
-        <h2 style="margin-left: 10px;" id="about">朧気とは</h2>
-        <v-card elevation="0">
-          <v-card-text class="text-subtitle-2" style="color:black">
-            朧気は、美大生による展示団体です。<br>
-            第一回展示は2/18-20 デザインフェスタギャラリーにて行いました。<br><br>
-            
-            コロナ渦において先行きの見えない「朧気」な私たちが作家活動をしていく場として、本展示団体を立ち上げました。<br><br>
-            
-            次回展示は上記の通り、<br>
-            12/26-28 デザインフェスタギャラリーにて予定しております。<br>
-            詳細は<a href="event.html">こちら</a>をクリックしてご覧ください。</v-card-text>
-        </v-card>
-
-        <h2 style="margin-left: 10px;" id="us">作者紹介</h2>
-        <p class="mx-4">タップすると詳細が見れます。</p>
+        <h2 id="us" class="my-4 text-center">- 作者紹介 -</h2>
+        <p class="text-center">タップすると詳細が見れます。</p>
+        <p class="text-center text-h6">Regular</p>
         <v-row dense class="mx-4">
           <v-col
-            v-for="(item, i) in items"
-            :key="i"
+            v-for="(item, num) in regulars"
+            :key="num"
             cols="12"
             sm="6"
             md="6"
@@ -121,7 +132,207 @@
               :color="item.color"
               dark
               height="100%"
-              :href="`/author.html?${i}`"
+              :href="`/author.html?${item.num}`"
+            >
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <v-row>
+                  <v-col cols="4">
+                    <v-avatar
+                      class="ma-3"
+                      size="100"
+                      tile
+                      v-if="item.src"
+                    >
+                      <v-img :src="item.src" style="border-radius: 50%;"></v-img>
+                    </v-avatar>
+                    <v-avatar
+                      class="ma-3"
+                      size="100"
+                      tile
+                      v-else
+                    >
+                      <v-img src="img/ptrkl.jpg" style="border-radius: 50%;"></v-img>
+                    </v-avatar>
+                  </v-col>
+                  <v-col cols="8">
+                    <v-card-title
+                      class="text-h"
+                      v-text="item.title"
+                    ></v-card-title>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="50px"
+                      right
+                      width="50px"
+                      :href="item.tw"
+                      v-if="item.tw"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-twitter</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.insta"
+                      v-if="item.insta"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-instagram</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.yt"
+                      v-if="item.yt"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-youtube</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.tk"
+                      v-if="item.tk"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-alpha-t-box</v-icon>
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </div>             
+            </v-card>
+          </v-col>
+        </v-row>
+        <p class="text-center text-h6">Guests</p>
+        <v-row dense class="mx-4">
+          <v-col
+            v-for="(item, num) in guests"
+            :key="num"
+            cols="12"
+            sm="6"
+            md="6"
+            lg="4"
+            xl="4"
+          >
+            <v-card
+              :color="item.color"
+              dark
+              height="100%"
+              :href="`/author.html?${item.num}`"
+            >
+              <div class="d-flex flex-no-wrap justify-space-between">
+                <v-row>
+                  <v-col cols="4">
+                    <v-avatar
+                      class="ma-3"
+                      size="100"
+                      tile
+                      v-if="item.src"
+                    >
+                      <v-img :src="item.src" style="border-radius: 50%;"></v-img>
+                    </v-avatar>
+                    <v-avatar
+                      class="ma-3"
+                      size="100"
+                      tile
+                      v-else
+                    >
+                      <v-img src="img/ptrkl.jpg" style="border-radius: 50%;"></v-img>
+                    </v-avatar>
+                  </v-col>
+                  <v-col cols="8">
+                    <v-card-title
+                      class="text-h"
+                      v-text="item.title"
+                    ></v-card-title>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="50px"
+                      right
+                      width="50px"
+                      :href="item.tw"
+                      v-if="item.tw"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-twitter</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.insta"
+                      v-if="item.insta"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-instagram</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.yt"
+                      v-if="item.yt"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-youtube</v-icon>
+                    </v-btn>
+                    <v-btn
+                      class="ml-4"
+                      fab
+                      icon
+                      height="40px"
+                      right
+                      width="40px"
+                      :href="item.tk"
+                      v-if="item.tk"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <v-icon>mdi-alpha-t-box</v-icon>
+                    </v-btn>
+                  </v-col>
+                </v-row>
+              </div>             
+            </v-card>
+          </v-col>
+        </v-row>
+        <p class="text-center text-h6">Former Guests</p>
+        <v-row dense class="mx-4">
+          <v-col
+            v-for="(item, num) in former"
+            :key="num"
+            cols="12"
+            sm="6"
+            md="6"
+            lg="4"
+            xl="4"
+          >
+            <v-card
+              :color="item.color"
+              dark
+              height="100%"
+              :href="`/author.html?${item.num}`"
             >
               <div class="d-flex flex-no-wrap justify-space-between">
                 <v-row>
@@ -207,7 +418,7 @@
           </v-col>
         </v-row>
 
-        <h2 style="margin-left: 10px;" id="news">お知らせ</h2>
+        <h2 id="news" class="my-4 text-center">- お知らせ -</h2>
         <v-simple-table class="my-2">
           <template v-slot:default>
             <thead>
@@ -249,6 +460,7 @@
         el: '#app',        
         data:{
           drawer: false,
+          menu: false,
           group: null,
           items1: [
             {
@@ -261,7 +473,7 @@
               src: 'img/1.jpg',
             },
           ],
-          items: [
+          regulars: [
             {
               color: 'pink',
               title: '珠枝雛乃',
@@ -269,68 +481,103 @@
               src:"https://pbs.twimg.com/profile_images/1451466463751991297/q4jXYEBZ_400x400.jpg",
               tw:"https://twitter.com/nonhinachan?s=20&t=r49WhTC7Ta2aCGVCYTLt0w",
               yt:"https://youtube.com/channel/UCO0Zr3loHC6ac0RvZJPrqXw",
-              tk:"https://vt.tiktok.com/ZSdXoheA2/"
+              tk:"https://vt.tiktok.com/ZSdXoheA2/",
+              num: 0
             },
             {
               color: 'orange',
               title: 'すゑ',
               intro: 'すゑ(sue)と申します。この名前は実家のうさぎさんからもらいました。生活の中の漂い、流れる空気の柔らかさや湿っぽさを陶や水彩を主に用いて表現します。2003年生まれ。2021年多摩美術大学に入学。同年、級友とグループ展「朧気」を開催。現在は陶を学んでいる。',
-              src:"img/auth/1/0.jpg"
-            },
-            {
-              color: 'brown',
-              title: '灸夏',
-              intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
-              tw:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg",
-              src:"img/auth/2/83779.jpg"
-            },
-            {
-              color: 'green',
-              title: '相田 穂介',
-              intro: '好きな時に好きなだけ好きな絵を描きます。',
-              insta: "https://www.instagram.com/habagen_idah/",
-              src:"img/auth/3/0.jpg"
+              src:"img/auth/1/0.jpg",
+              num: 1
             },
             {
               color: 'blue',
               title: 'くらげ',
               intro: '多摩美術大学日本画2年 海に関する日本画を制作しています。',
               insta:  "https://www.instagram.com/kurage5656/",
-              src:"img/auth/4/0.jpg"
+              src:"img/auth/2/0.jpg",
+              num: 2
             },
             {
               color: 'red',
               title: '石川芳江',
               intro: '多摩美術大学 日本画 二年',
-              src:"img/auth/5/0.jpg"
+              src:"img/auth/5/0.jpg",
+              num: 3
             },
             {
               color: 'yellow',
               title: 'みやもとあやか',
               intro: '多摩美術大学　日本画　２年',
-              src:"img/auth/6/0.jpg"
-            },
-            {
-              color: 'pink lighten-5',
-              title: '戌宮初音',
-              intro: '多摩美術大学　メディア芸術　２年',
-              src:"img/auth/7/0.jpg",
-              tw:"https://twitter.com/inumiya_pome",
-              insta:  "https://www.instagram.com/inumiya_pome/",
-              tk:"https://www.tiktok.com/@inumiya_pome"
-            },
-            {
-              color: 'pink lighten-2',
-              title: 'なえ',
-              intro: '多摩美術大学　情報デザイン　２年',
-              src:"img/auth/8/0.jpg"
+              src:"img/auth/6/0.jpg",
+              num: 4
             },
             {
               color: '#952175',
               title: 'あいう',
               intro: '',
+              num: 5
             },
           ],
+          guests:[
+            {
+              color: 'pink lighten-5',
+              title: '戌宮初音',
+              intro: '多摩美術大学　メディア芸術　２年',
+              src:"img/auth/8/0.jpg",
+              tw:"https://twitter.com/inumiya_pome",
+              insta:  "https://www.instagram.com/inumiya_pome/",
+              tk:"https://www.tiktok.com/@inumiya_pome",
+              num: 8
+            },
+            {
+              color: 'pink lighten-2',
+              title: 'なえ',
+              intro: '多摩美術大学　情報デザイン　２年',
+              src:"img/auth/9/0.jpg",
+              num: 9
+            },
+            {
+              color: 'pink lighten-1',
+              title: '早川実花',
+              intro: '多摩美術大学',
+              src:"img/auth/9/0.jpg",
+              num: 10
+            },
+            {
+              color: 'pink lighten-1',
+              title: 'コウキ',
+              intro: '多摩美術大学',
+              src:"img/auth/10/0.jpg",
+              num: 11
+            },
+            {
+              color: 'pink lighten-1',
+              title: '窪田シュリ',
+              intro: '多摩美術大学',
+              src:"img/auth/11/0.jpg",
+              num: 12
+            },
+          ],
+          former:[
+            {
+              color: 'green',
+              title: '相田 穂介',
+              intro: '好きな時に好きなだけ好きな絵を描きます。',
+              insta: "https://www.instagram.com/habagen_idah/",
+              src:"img/auth/3/0.jpg",
+              num: 6
+            },  
+            {
+              color: 'brown',
+              title: '灸夏',
+              intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
+              tw:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg",
+              src:"img/auth/2/83779.jpg",
+              num: 7
+            },
+          ]
         },
         watch: {
           group () {

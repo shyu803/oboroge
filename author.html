@@ -156,62 +156,104 @@
           q: window.location.search.slice(1),
           qq:null,
           items: [
-            {
+          {
               color: 'pink',
               title: '珠枝雛乃',
               intro: 'スチームパンクでメルヘンな世界観が好き。立体作品製作から楽曲製作まで幅広い活動をしている。2000年生まれ。2021年多摩美術大学入学、グループ展「朧気」の主宰。現在は金属を学んでいる。',
               src:"https://pbs.twimg.com/profile_images/1451466463751991297/q4jXYEBZ_400x400.jpg",
               tw:"https://twitter.com/nonhinachan?s=20&t=r49WhTC7Ta2aCGVCYTLt0w",
               yt:"https://youtube.com/channel/UCO0Zr3loHC6ac0RvZJPrqXw",
-              tk:"https://vt.tiktok.com/ZSdXoheA2/"
+              tk:"https://vt.tiktok.com/ZSdXoheA2/",
+              num: 0
             },
             {
               color: 'orange',
               title: 'すゑ',
               intro: 'すゑ(sue)と申します。この名前は実家のうさぎさんからもらいました。生活の中の漂い、流れる空気の柔らかさや湿っぽさを陶や水彩を主に用いて表現します。2003年生まれ。2021年多摩美術大学に入学。同年、級友とグループ展「朧気」を開催。現在は陶を学んでいる。',
-            },
-            {
-              color: 'brown',
-              title: '灸夏',
-              intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
-              tw:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg"
-            },
-            {
-              color: 'green',
-              title: '相田 穂介',
-              intro: '好きな時に好きなだけ好きな絵を描きます。',
-              insta: "https://www.instagram.com/habagen_idah/"
+              src:"img/auth/1/0.jpg",
+              num: 1
             },
             {
               color: 'blue',
               title: 'くらげ',
               intro: '多摩美術大学日本画2年 海に関する日本画を制作しています。',
-              insta:  "https://www.instagram.com/kurage5656/"
+              insta:  "https://www.instagram.com/kurage5656/",
+              src:"img/auth/4/0.jpg",
+              num: 2
             },
             {
               color: 'red',
               title: '石川芳江',
               intro: '多摩美術大学 日本画 二年',
+              src:"img/auth/5/0.jpg",
+              num: 3
             },
             {
               color: 'yellow',
               title: 'みやもとあやか',
               intro: '多摩美術大学　日本画　２年',
-            },
-            {
-              color: 'pink lighten-4',
-              title: '戌宮初音',
-              intro: '多摩美術大学　メディア芸術　２年',
-            },
-            {
-              color: 'pink lighten-2',
-              title: 'なえ',
-              intro: '多摩美術大学　情報デザイン　２年',
+              src:"img/auth/6/0.jpg",
+              num: 4
             },
             {
               color: '#952175',
               title: 'あいう',
               intro: '',
+              num: 5
+            },
+
+            {
+              color: 'brown',
+              title: '灸夏',
+              intro: '植物と夏が好きです。主に日本画材やアクリルを使って、じっとりとした日本の夏や生い茂る自然の美しさを描いています。',
+              tw:"https://twitter.com/09__ka?s=20&t=A6c1Gz-0MMZj1eWUmGpLGg",
+              num: 6,
+            },
+            {
+              color: 'green',
+              title: '相田 穂介',
+              intro: '好きな時に好きなだけ好きな絵を描きます。',
+              insta: "https://www.instagram.com/habagen_idah/",
+              num: 7,
+            },
+
+            {
+              color: 'pink lighten-5',
+              title: '戌宮初音',
+              intro: '多摩美術大学　メディア芸術　２年',
+              src:"img/auth/7/0.jpg",
+              tw:"https://twitter.com/inumiya_pome",
+              insta:  "https://www.instagram.com/inumiya_pome/",
+              tk:"https://www.tiktok.com/@inumiya_pome",
+              num: 8
+            },
+            {
+              color: 'pink lighten-2',
+              title: 'なえ',
+              intro: '多摩美術大学　情報デザイン　２年',
+              src:"img/auth/8/0.jpg",
+              num: 9
+            },
+            {
+              color: 'gray',
+              title: '早川実花',
+              intro: '多摩美術大学',
+              src:"img/auth/9/0.jpg",
+              num: 10
+            },
+            {
+              color: 'gray',
+              title: 'コウキ',
+              intro: '多摩美術大学',
+              src:"img/auth/10/0.jpg",
+              num: 11
+            },
+            {
+              color: 'gray',
+              title: '窪田シュリ',
+              intro: '多摩美術大学',
+              src:"img/auth/11/0.jpg",
+              num: 12
             },
           ],
           ss:null,
@@ -254,6 +296,7 @@
           },
         },
         created(){
+          console.log("authorCre:",this.q)
           this.qq = this.q
           if(this.q==0){
             this.ss = this.slide0
