@@ -267,6 +267,13 @@
               src:"img/auth/13/0.jpg",
               num: 13
             },
+            {
+              color: 'light-blue darken-1',
+              title: 'ちい㌢',
+              intro: '',
+              //src:"img/auth/13/0.jpg",
+              num: 14
+            },
 
           ],
           ss:null,
@@ -326,6 +333,10 @@
           [
             {src: "img/auth/13/0.jpg"},{src: "img/auth/13/1.jpg"},{src: "img/auth/13/2.jpg"},{src: "img/auth/13/3.jpg"}
           ],
+          slide14: 
+          [
+            //{src: "img/auth/14/0.jpg"}
+          ],
         },
         watch: {
           group () {
@@ -376,6 +387,9 @@
           }
           if(this.q==13){
             this.ss = this.slide13
+          }
+          if(this.q==14){
+            this.ss = this.slide14
           }
           
         },
